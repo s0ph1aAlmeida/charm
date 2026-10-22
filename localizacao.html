@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Veja a localização, endereço e horários da Charm Fit em Canoinhas.">
+  <title>Localização | Charm Fit</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="localizacao.js" defer></script>
+  <script src="acessibilidade.js" defer></script>
+</head>
+<body class="home-pagina">
+  <header>
+    <div id="topo">
+      <a class="logo" href="index.html" aria-label="Página inicial Charm Fit">Charm Fit<span>.</span></a>
+      <nav aria-label="Navegação principal">
+        <a href="sobre.html">A Charm Fit</a>
+        <a href="planos.html">Planos</a>
+        <a href="diferenciais.html">Diferenciais</a>
+        <a href="suplementos.html">Conheça nossa loja</a>
+        <a href="cadastro.html">Cadastrar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="home-localizacao" id="localizacao" aria-labelledby="titulo-localizacao">
+      <div class="home-localizacao-foto">
+        <img src="imagens/Life Gym Studio.jpg" alt="Espaço de treino da Charm Fit">
+        <span>Charm Fit · Canoinhas</span>
+      </div>
+      <div class="home-localizacao-conteudo">
+        <p class="etiqueta">venha nos visitar</p>
+        <h1 id="titulo-localizacao">Endereço e horários de funcionamento.</h1>
+        <div class="home-localizacao-cards">
+          <article class="home-localizacao-card">
+            <h3><span aria-hidden="true">📍</span> Endereço</h3>
+            <p class="home-localizacao-endereco">R. Caetano Costa, 61 – Centro, Canoinhas – SC</p>
+            <div class="home-localizacao-acoes">
+              <button class="botao home-localizacao-acao" type="button" data-copiar-endereco="R. Caetano Costa, 61 – Centro, Canoinhas – SC" aria-label="Copiar endereço">Copiar</button>
+              <a class="botao home-localizacao-acao" href="https://www.waze.com/ul?ll=-26.1775049%2C-50.3941036" target="_blank" rel="noopener noreferrer">Waze</a>
+              <a class="botao home-localizacao-acao" href="https://www.google.com/maps/search/?api=1&amp;query=-26.1775049%2C-50.3941036" target="_blank" rel="noopener noreferrer">Google Maps</a>
+            </div>
+            <p class="home-localizacao-feedback" data-feedback-copia aria-live="polite"></p>
+          </article>
+          <article class="home-localizacao-card">
+            <h3><span aria-hidden="true">🕐</span> Horários de funcionamento</h3>
+            <dl class="home-localizacao-horarios">
+              <div><dt>Seg à Sex</dt><dd>05h às 23h</dd></div>
+              <div><dt>Sáb e Feriados</dt><dd>08h às 14h</dd></div>
+              <div><dt>Dom</dt><dd>08h às 12h</dd></div>
+            </dl>
+            <a class="botao home-localizacao-acao home-localizacao-aulas" href="cadastro.html#cadastro">Veja as aulas disponíveis <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="#topo" aria-label="Voltar ao início">Charm Fit<span>.</span></a>
+    <p>movimento para todos os dias.</p>
+    <span>© 2026 Charm Fit</span>
+  </footer>
+</body>
+</html>

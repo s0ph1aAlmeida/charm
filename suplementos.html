@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça a loja Charm Fit: roupas fitness, suplementos e acessórios para acompanhar seu ritmo.">
+  <title>Conheça nossa loja | Charm Fit</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="suplementos.js" defer></script>
+  <script src="acessibilidade.js" defer></script>
+</head>
+<body>
+  <header>
+    <div id="topo">
+      <a class="logo" href="index.html" aria-label="Página inicial Charm Fit">Charm Fit<span>.</span></a>
+      <nav aria-label="Navegação principal">
+        <a href="index.html">Home</a>
+        <a href="sobre.html">A Charm Fit</a>
+        <a href="planos.html">Planos</a>
+        <a href="diferenciais.html">Diferenciais</a>
+        <a href="suplementos.html" aria-current="page">Conheça nossa loja</a>
+        <a href="cadastro.html">Cadastrar</a>
+      </nav>
+    </div>
+  </header>
+  <main class="loja-pagina">
+    <section class="loja-hero" aria-labelledby="titulo-loja">
+      <div class="loja-hero-conteudo">
+        <p class="etiqueta">Charm Fit · movimento com intenção</p>
+        <h1 id="titulo-loja">Tudo para o seu <em>ritmo.</em></h1>
+        <p class="hero-texto">Roupas, suplementos e acessórios para acompanhar você em cada etapa — do seu jeito, no seu tempo.</p>
+        <div class="loja-hero-acoes">
+          <a class="botao" href="#catalogo">Explorar a loja <span aria-hidden="true">↓</span></a>
+          <button class="loja-carrinho-abrir" id="abrir-carrinho" type="button" aria-label="Abrir carrinho, 0 itens">Minha sacola <span id="contador-carrinho" aria-hidden="true">0</span></button>
+        </div>
+        <p class="loja-nota">Uma curadoria para sua rotina real.</p>
+      </div>
+      <div class="loja-hero-foto">
+        <img src="imagens/garotas.jpg" alt="Mulheres se exercitando juntas na academia">
+        <span>Encontre seu próximo favorito</span>
+      </div>
+    </section>
+
+    <section class="loja-destaques" id="secao-destaques" aria-labelledby="destaques-titulo" hidden>
+      <div class="loja-secao-topo"><div><p class="etiqueta">para começar</p><h2 id="destaques-titulo">Ofertas e <em>novidades.</em></h2></div><p>Novos achados e escolhas especiais para sua rotina.</p></div>
+      <div class="destaques-grid" id="lista-destaques"></div>
+    </section>
+
+    <section class="catalogo loja-catalogo" id="catalogo" aria-labelledby="catalogo-titulo">
+      <div class="catalogo-topo">
+        <div><p class="etiqueta">a curadoria Charm Fit</p><h2 id="catalogo-titulo">Escolha com <em>clareza.</em></h2></div>
+        <a class="botao botao-painel" href="painel.html">Gerenciar produtos <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="loja-intro-categorias" aria-label="Categorias da loja">
+        <span>Roupas femininas</span><span>Suplementos</span><span>Acessórios</span>
+      </div>
+      <div class="filtros loja-filtros" aria-label="Busca e filtros da loja">
+        <label class="busca"><span aria-hidden="true">⌕</span><input id="busca-produto" type="search" placeholder="Buscar na loja" aria-label="Buscar produtos"></label>
+        <div id="categorias" class="categorias" role="group" aria-label="Filtrar por categoria"></div>
+        <div class="loja-filtros-extras">
+          <label class="filtro-valor" for="filtro-preco"><span>Preço máximo <output id="valor-preco" for="filtro-preco"></output></span><input id="filtro-preco" type="range" min="0" max="300" step="10" value="300"></label>
+          <label class="filtro-tamanho" for="filtro-tamanho"><span>Tamanho</span><select id="filtro-tamanho"><option value="">Todos os tamanhos</option></select></label>
+        </div>
+      </div>
+      <section id="conteudo-saude" class="conteudo-saude" aria-labelledby="saude-titulo" hidden>
+        <div class="saude-apresentacao">
+          <div>
+            <p class="etiqueta">saúde e bem-estar · movimento no seu ritmo</p>
+            <h2 id="saude-titulo">Um espaço para <em>cada corpo.</em></h2>
+            <p>Encontre ideias para se movimentar com acolhimento, respeitando sua história, sua fase da vida e o que seu corpo precisa hoje.</p>
+          </div>
+          <img src="imagens/mulher.jpeg" alt="Mulher em um momento de movimento e cuidado com o próprio corpo" loading="lazy">
+        </div>
+        <p class="saude-alerta"><strong>Seu cuidado vem primeiro.</strong> Estas são informações gerais, não uma prescrição. Nem todo exercício serve para todas as pessoas. Se você está grávida, no pós-parto, tem uma condição de saúde, sente dor ou tem dúvidas, converse com um profissional de saúde antes de começar ou mudar sua rotina. Pare se sentir mal e procure orientação.</p>
+        <div id="filtros-saude" class="filtros-saude" role="group" aria-label="Escolha o tema das dicas">
+          <button class="ativo" type="button" data-saude-categoria="todos" aria-pressed="true">Todos os temas</button>
+          <button type="button" data-saude-categoria="gestacao" aria-pressed="false">Gestação</button>
+          <button type="button" data-saude-categoria="ciclo" aria-pressed="false">Período menstrual</button>
+          <button type="button" data-saude-categoria="inicio" aria-pressed="false">Iniciantes</button>
+          <button type="button" data-saude-categoria="inclusao" aria-pressed="false">Deficiência e mobilidade</button>
+          <button type="button" data-saude-categoria="pos-parto" aria-pressed="false">Pós-parto</button>
+          <button type="button" data-saude-categoria="objetivos" aria-pressed="false">Objetivos de treino</button>
+          <button type="button" data-saude-categoria="idades" aria-pressed="false">Idades e condições</button>
+        </div>
+        <p id="resultado-saude" class="resultado-saude" aria-live="polite"></p>
+        <div id="saude-dicas" class="saude-grade">
+          <article class="saude-dica" data-saude-tema="gestacao">
+            <p class="saude-etiqueta">Cada fase é diferente</p>
+            <h3>Gestação</h3>
+            <p>Atividade na gravidez depende da sua saúde, da gestação e do que você já praticava. Converse com a equipe que acompanha seu pré-natal antes de iniciar ou continuar exercícios; siga as orientações específicas para cada fase.</p>
+            <h4>Ideias para conversar com sua equipe</h4>
+            <ul><li>Se houver liberação, pergunte se uma caminhada leve em local seguro ou movimentos de mobilidade com apoio são adequados para você.</li><li>Faça pausas, hidrate-se e adapte ou interrompa a atividade conforme orientação profissional.</li></ul>
+            <p class="saude-adaptacao"><strong>Atenção:</strong> não existe uma rotina universalmente segura. Sangramento, tontura, dor no peito, falta de ar incomum, perda de líquido ou dor exigem parar e buscar orientação médica imediatamente.</p>
+          </article>
+          <article class="saude-dica" data-saude-tema="ciclo">
+            <p class="saude-etiqueta">Você escolhe a intensidade</p>
+            <h3>Período menstrual</h3>
+            <p>Energia, cólicas e desconfortos variam de pessoa para pessoa e de um ciclo para outro. Não é preciso seguir um treino fixo: escolha o que parece confortável para você naquele dia.</p>
+            <h4>Opções para adaptar</h4>
+            <ul><li>Em dias em que estiver bem, experimente caminhada tranquila, alongamentos suaves ou sua atividade habitual em ritmo menor.</li><li>Com mais cansaço ou desconforto, reduza o tempo, faça pausas, escolha movimentos sentados ou descanse. Descanso também é uma opção válida.</li></ul>
+            <p class="saude-adaptacao"><strong>Respeite seus sinais:</strong> dor forte, nova ou que atrapalha suas atividades merece avaliação de um profissional de saúde.</p>
+          </article>
+          <article class="saude-dica" data-saude-tema="inicio">
+            <p class="saude-etiqueta">Um passo de cada vez</p>
+            <h3>Para quem está começando</h3>
+            <p>Escolha um lugar firme e livre de obstáculos. Faça os movimentos devagar, com apoio por perto se precisar. Esta sequência é apenas uma ideia introdutória: adapte ou pare se houver dor, tontura ou mal-estar.</p>
+            <h4>Sequência simples, passo a passo</h4>
+            <ol><li><strong>Marcha sentada:</strong> sente-se com apoio e alterne levantar os pés alguns centímetros, sem prender a respiração.</li><li><strong>Sentar e levantar:</strong> se isso for confortável para você, use uma cadeira estável encostada na parede; incline levemente o tronco, levante com controle e volte a sentar. Use as mãos como apoio se necessário.</li><li><strong>Flexão na parede:</strong> de frente para uma parede, apoie as mãos na altura do peito e aproxime e afaste o tronco devagar. Pare se sentir desconforto.</li></ol>
+            <p class="saude-adaptacao"><strong>Adaptação:</strong> experimente só um movimento, faça menos repetições, aumente o descanso ou peça a um profissional para demonstrar uma alternativa adequada a você.</p>
+          </article>
+          <article class="saude-dica" data-saude-tema="inclusao">
+            <p class="saude-etiqueta">Movimento com acessibilidade</p>
+            <h3>Deficiência ou mobilidade reduzida</h3>
+            <p>As necessidades variam muito. Exercícios podem ser feitos sentada, com apoio ou com recursos de mobilidade, conforme sua preferência e orientação. Você não precisa realizar movimentos que causem dor ou não sejam possíveis para seu corpo.</p>
+            <h4>Possíveis adaptações</h4>
+            <ul><li>Uma marcha sentada ou movimentos confortáveis dos braços podem ser opções para algumas pessoas; amplitude, ritmo e lado do corpo podem ser adaptados.</li><li>Use uma cadeira ou equipamento estável e peça ajuda para preparar o espaço quando necessário. Para cadeira de rodas, ajuste freios e apoios apenas conforme as orientações do fabricante ou da sua equipe.</li></ul>
+            <p class="saude-adaptacao"><strong>Apoio individual:</strong> fisioterapeutas e profissionais de atividade física com experiência em inclusão podem ajudar a escolher alternativas para sua deficiência, condição, dor, fadiga e equipamentos.</p>
+          </article>
+          <article class="saude-dica" data-saude-tema="pos-parto">
+            <p class="saude-etiqueta">Recuperação sem pressa</p>
+            <h3>Pós-parto</h3>
+            <p>O tempo de recuperação e a liberação para se exercitar são individuais. Considere o tipo de parto, sua recuperação e possíveis sintomas junto à equipe que acompanha você. Não retome exercícios porque um prazo genérico diz que já pode.</p>
+            <h4>Retomada orientada</h4>
+            <ul><li>Depois de receber liberação profissional, pergunte quais movimentos e progressão são apropriados para sua recuperação.</li><li>Conforme essa orientação, atividades leves e curtas podem ser consideradas; aumente o desafio gradualmente apenas com aprovação e conforto.</li></ul>
+            <p class="saude-adaptacao"><strong>Interrompa e procure orientação:</strong> dor, aumento do sangramento, sensação de pressão ou peso pélvico, tontura ou mal-estar precisam ser avaliados. Em caso de sintomas intensos ou urgentes, procure atendimento médico.</p>
+          </article>
+          <article class="saude-dica" data-saude-tema="objetivos">
+            <p class="saude-etiqueta">Metas diferentes, caminhos diferentes</p>
+            <h3>Força, condicionamento e outros objetivos</h3>
+            <p>Ganhar massa muscular, emagrecer ou melhorar o condicionamento não exige o mesmo plano. O ponto de partida, a saúde, a rotina e as preferências de cada pessoa devem orientar as escolhas, sem promessas ou pressão estética.</p>
+            <h4>Ideias para montar seu plano</h4>
+            <ul><li><strong>Força e massa muscular:</strong> converse com um profissional sobre exercícios de resistência, técnica, descanso e progressão compatíveis com sua experiência.</li><li><strong>Condicionamento:</strong> com liberação quando necessária, escolha uma atividade de que goste e ajuste ritmo e duração gradualmente.</li><li><strong>Emagrecimento:</strong> priorize hábitos sustentáveis e bem-estar; evite treinos punitivos e procure profissionais qualificados para apoio individualizado.</li></ul>
+            <p class="saude-adaptacao"><strong>Adaptação:</strong> a rotina pode ser feita em casa, sentada, com baixo impacto ou em sessões menores. Nenhuma meta precisa ser alcançada à custa de dor ou exaustão.</p>
+          </article>
+          <article class="saude-dica" data-saude-tema="idades">
+            <p class="saude-etiqueta">Seu corpo não precisa caber em um padrão</p>
+            <h3>Diferentes idades e condições físicas</h3>
+            <p>Idade, experiência, mobilidade, doenças, deficiência, dor, medicamentos e energia podem mudar o que é confortável ou indicado. Uma atividade adequada para outra pessoa pode não ser adequada para você.</p>
+            <h4>Escolha e adapte</h4>
+            <ul><li>Converse com um profissional sobre opções como movimentos sentados, exercícios com apoio, baixo impacto ou resistência leve, de acordo com sua avaliação.</li><li>Combine pausas e adaptações com suas necessidades; peça instruções claras e um ambiente acessível antes da atividade.</li></ul>
+            <p class="saude-adaptacao"><strong>Sem comparação:</strong> não há idade certa para começar nem obrigação de acompanhar o ritmo de outras pessoas. Se uma condição de saúde mudar ou surgir um sintoma novo, procure orientação antes de continuar.</p>
+          </article>
+        </div>
+        <p id="saude-vazio" class="catalogo-vazio" aria-live="polite" hidden><strong>Nenhuma dica encontrada.</strong> Tente outro termo ou escolha um tema diferente.</p>
+      </section>
+      <p id="resultado-catalogo" class="resultado-catalogo" aria-live="polite"></p>
+      <div id="lista-produtos" class="produtos-grid"></div>
+      <div id="catalogo-vazio" class="catalogo-vazio" hidden><h3>Nenhum produto encontrado.</h3><p>Tente outro termo ou ajuste os filtros.</p></div>
+      <p class="loja-aviso">Preços e produtos apresentados para demonstração. O carrinho organiza sua seleção neste navegador; não há integração de pagamento nem confirmação de estoque.</p>
+    </section>
+
+    <aside class="carrinho-painel" id="carrinho" aria-labelledby="titulo-carrinho" hidden>
+      <div class="carrinho-cabecalho"><div><p class="etiqueta">sua seleção</p><h2 id="titulo-carrinho">Minha sacola</h2></div><button id="fechar-carrinho" class="carrinho-fechar" type="button" aria-label="Fechar carrinho">×</button></div>
+      <div id="itens-carrinho" class="itens-carrinho"></div>
+      <div class="carrinho-total"><span>Total ilustrativo</span><strong id="total-carrinho">R$ 0,00</strong></div>
+      <p class="carrinho-aviso">Esta sacola é apenas uma lista local de produtos. Não processa pedidos, pagamentos nem reserva estoque.</p>
+      <button id="limpar-carrinho" class="botao-secundario carrinho-limpar" type="button">Limpar sacola</button>
+      <p id="mensagem-carrinho" class="mensagem-carrinho" aria-live="polite"></p>
+    </aside>
+  </main>
+  <footer><span class="logo">Charm Fit<span>.</span></span><p>informação para cuidar da sua rotina.</p><span>© 2024 Charm Fit</span></footer>
+</body>
+</html>

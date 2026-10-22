@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Detalhes de produtos selecionados da loja Charm Fit.">
+  <title>Detalhes do produto | Charm Fit</title>
+  <link rel="stylesheet" href="style.css"><script src="suplementos.js" defer></script><script src="acessibilidade.js" defer></script>
+</head>
+<body class="produto-pagina">
+  <header><div id="topo"><a class="logo" href="index.html" aria-label="Página inicial Charm Fit">Charm Fit<span>.</span></a><nav aria-label="Navegação principal"><a href="index.html">Home</a><a href="sobre.html">Sobre</a><a href="suplementos.html">Conheça nossa loja</a><a href="cadastro.html">Cadastrar</a><a href="painel.html">Painel</a></nav></div></header>
+  <main id="detalhe-produto"></main>
+  <footer><span class="logo">Charm Fit<span>.</span></span><p>informação para cuidar da sua rotina.</p><span>© 2024 Charm Fit</span></footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const id = new URLSearchParams(location.search).get("id");
+      const produto = obterProdutos().find(item => item.id === id);
+      const destino = document.querySelector("#detalhe-produto");
+      if (!produto) { destino.innerHTML = "<section class='catalogo-vazio'><h1>Produto não encontrado.</h1><a class='botao' href='suplementos.html'>Voltar para a loja</a></section>"; return; }
+      document.title = `${produto.nome} | Charm Fit`;
+      const mostrarCategoria = !categoriasOcultasNaVitrine.includes(produto.categoria);
+      const bloco = (titulo, texto, classe = "") => `<section class="detalhe-bloco ${classe}"><h2>${titulo}</h2><p>${escapar(texto).replace(/\n/g, "<br>")}</p></section>`;
+      const suplementos = ["Suplementos", "Proteínas", "Creatina", "Vitaminas", "Minerais", "Pré-treino", "Aminoácidos", "Saúde e bem-estar", "Outros"].includes(produto.categoria);
+      const detalhes = suplementos
+        ? `<nav class="detalhe-nav" aria-label="Seções do produto"><a href="#resumo">Resumo</a><a href="#serve">Características</a><a href="#nutricional">Informações do rótulo</a><a href="#ingredientes">Ingredientes</a><a href="#advertencias">Advertências</a></nav><div id="resumo">${bloco("Resumo", produto.descricao)}<div id="serve">${bloco("Características", produto.caracteristicas, "ancora")}</div><div id="nutricional">${bloco("Informações do rótulo", produto.tabela, "tabela ancora")}</div><div id="ingredientes">${bloco("Ingredientes", produto.ingredientes, "ancora")}</div><div id="advertencias">${bloco("Advertências", produto.advertencias, "ancora")}</div>${bloco("Fabricante", produto.fabricante, "ancora")}</div>`
+        : `<nav class="detalhe-nav" aria-label="Seções do produto"><a href="#resumo">Resumo</a><a href="#detalhes">Detalhes</a></nav><div id="resumo">${bloco("Sobre o produto", produto.descricao)}<div id="detalhes">${bloco("Detalhes", produto.caracteristicas, "ancora")}${produto.tamanhos ? bloco("Tamanhos disponíveis", produto.tamanhos, "ancora") : ""}${produto.cores ? bloco("Cores disponíveis", produto.cores, "ancora") : ""}</div></div>`;
+      destino.innerHTML = `<section class="detalhe-cabecalho"><a class="voltar" href="suplementos.html">← voltar para a loja</a><div class="detalhe-grade"><div class="detalhe-foto"><img src="${escapar(produto.imagem || "imagens/treino.jpg")}" alt="${escapar(produto.nome)}" onerror="this.onerror=null;this.src='imagens/treino.jpg'"></div><div class="detalhe-resumo">${mostrarCategoria ? `<p class="etiqueta">${escapar(produto.categoria)}</p>` : ""}<h1>${escapar(produto.nome)}</h1><p class="detalhe-preco">R$ ${escapar(produto.preco)}</p><p class="hero-texto">${escapar(produto.descricao)}</p><p class="detalhe-quantidade">${escapar(produto.quantidade)}${produto.tamanhos ? ` · Tamanhos: ${escapar(produto.tamanhos)}` : ""}${produto.cores ? ` · Cores: ${escapar(produto.cores)}` : ""}</p>${produto.precoOriginal ? `<p class="sem-compra">Preço anterior: R$ ${escapar(produto.precoOriginal)}.</p>` : ""}${produto.linkCompra ? `<a class="botao" href="${escapar(produto.linkCompra)}" target="_blank" rel="noopener noreferrer">Acessar link de compra <span>↗</span></a>` : "<p class='sem-compra'>Produto demonstrativo: não há checkout integrado.</p>"}</div></div></section><section class="detalhe-conteudo"><div class="detalhe-secoes">${detalhes}</div></section>`;
+    });
+  </script>
+</body>
+</html>

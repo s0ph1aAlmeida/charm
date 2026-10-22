@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça os planos e valores da Charm Fit para escolher a melhor opção para sua rotina.">
+  <title>Planos | Charm Fit</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="planos.js" defer></script>
+  <script src="acessibilidade.js" defer></script>
+</head>
+<body class="home-pagina">
+  <header>
+    <div id="topo">
+      <a class="logo" href="index.html" aria-label="Página inicial Charm Fit">Charm Fit<span>.</span></a>
+      <nav aria-label="Navegação principal">
+        <a href="sobre.html">A Charm Fit</a>
+        <a href="planos.html" aria-current="page">Planos</a>
+        <a href="diferenciais.html">Diferenciais</a>
+        <a href="suplementos.html">Conheça nossa loja</a>
+        <a href="cadastro.html">Cadastrar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="home-secao home-planos-valores" id="planos-valores" aria-labelledby="titulo-planos-valores">
+      <div class="cabecalho-secao home-planos-valores-cabecalho">
+        <div>
+          <p class="etiqueta">planos e valores</p>
+          <h1 id="titulo-planos-valores">Escolha o plano ideal para você.</h1>
+        </div>
+        <p class="descricao-secao">Comece hoje a cuidar da sua saúde, alcançar seus objetivos e fazer parte da Charm Fit.</p>
+      </div>
+      <div class="home-planos-valores-grid">
+        <article class="preco-plano" data-valor-centavos="9990">
+          <p class="categoria">mensalidade flexível</p>
+          <h3>Plano mensal</h3>
+          <p class="preco-valor">R$ <span data-preco-atual>99,90</span><span class="preco-ciclo"> / mês</span></p>
+          <p class="preco-original" data-preco-original hidden></p>
+          <ul class="preco-beneficios">
+            <li>Acesso à academia</li>
+            <li>Sem fidelidade</li>
+            <li>Acesso durante o horário de funcionamento</li>
+          </ul>
+          <a class="botao preco-botao" href="cadastro.html#cadastro">Assinar plano <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="preco-plano preco-plano-anual" data-valor-centavos="13990">
+          <span class="preco-selo">Melhor custo-benefício</span>
+          <p class="categoria">mais economia</p>
+          <h3>Plano anual</h3>
+          <p class="preco-valor">R$ <span data-preco-atual>139,90</span><span class="preco-ciclo"> / ano</span></p>
+          <p class="preco-equivalente">Equivale a aproximadamente R$ <span data-preco-equivalente>11,66</span> por mês</p>
+          <p class="preco-original" data-preco-original hidden></p>
+          <ul class="preco-beneficios">
+            <li>Acesso à academia</li>
+            <li>Melhor custo-benefício</li>
+            <li>Acesso durante o horário de funcionamento</li>
+          </ul>
+          <a class="botao preco-botao" href="cadastro.html#cadastro">Assinar plano <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="preco-plano preco-plano-vip" data-valor-centavos="16990">
+          <span class="preco-vip-selo">VIP</span>
+          <p class="categoria">experiência premium</p>
+          <h3>Plano VIP</h3>
+          <p class="preco-valor">R$ <span data-preco-atual>169,90</span><span class="preco-ciclo"> / mês</span></p>
+          <p class="preco-original" data-preco-original hidden></p>
+          <ul class="preco-beneficios">
+            <li>Acesso completo à academia</li>
+            <li>Benefícios exclusivos</li>
+            <li>Atendimento diferenciado</li>
+            <li>Experiência VIP</li>
+          </ul>
+          <a class="botao preco-botao" href="cadastro.html#cadastro">Quero ser VIP <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+
+      <p class="home-planos-valores-nota">Consulte as condições, formas de pagamento e benefícios de cada plano.</p>
+
+      <form class="home-cupom" id="form-cupom">
+        <div class="home-cupom-texto">
+          <p class="etiqueta">um benefício para você</p>
+          <h3>Tem um cupom?</h3>
+          <p>Insira seu cupom e aproveite seu desconto.</p>
+        </div>
+        <div class="home-cupom-controles">
+          <label for="codigo-cupom">Código do cupom</label>
+          <div class="home-cupom-campo">
+            <input id="codigo-cupom" name="cupom" type="text" autocomplete="off" placeholder="Digite seu cupom" aria-describedby="status-cupom">
+            <button class="botao" type="submit">Aplicar cupom</button>
+          </div>
+          <p class="home-cupom-status" id="status-cupom" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="#topo" aria-label="Voltar ao início">Charm Fit<span>.</span></a>
+    <p>movimento para todos os dias.</p>
+    <span>© 2026 Charm Fit</span>
+  </footer>
+</body>
+</html>
